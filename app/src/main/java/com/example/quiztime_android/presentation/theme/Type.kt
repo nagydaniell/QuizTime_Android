@@ -1,4 +1,4 @@
-package com.example.quiztime_android.ui.theme
+package com.example.quiztime_android.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.font.FontFamily

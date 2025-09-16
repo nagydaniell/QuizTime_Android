@@ -1,4 +1,4 @@
-package com.example.quiztime_android.ui.theme
+package com.example.quiztime_android.presentation.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

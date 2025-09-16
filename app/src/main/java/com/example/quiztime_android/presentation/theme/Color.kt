@@ -1,4 +1,4 @@
-package com.example.quiztime_android.ui.theme
+package com.example.quiztime_android.presentation.theme
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF6D5E0F)
@@ -72,3 +72,8 @@ val surfaceContainerLowDark = Color(0xFF1E1B13)
 val surfaceContainerDark = Color(0xFF222017)
 val surfaceContainerHighDark = Color(0xFF2D2A21)
 val surfaceContainerHighestDark = Color(0xFF38352B)
+
+val CustomGreen = Color(0xFF1B5E20)
+
+val CustomBlue = Color(0xFF00DBDE)
+val CustomPink = Color(0xFFFC00FF)
