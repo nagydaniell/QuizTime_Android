@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -20,23 +21,43 @@ import com.example.quiztime_android.presentation.dashboard.component.UserStatist
 @Composable
 fun DashboardScreen(
     modifier: Modifier = Modifier,
-    state: DashboardStates // Used for the values that can change during using the application, name, and questions attempted
+    state: DashboardState // Used for the values that can change during using the application, name, and questions attempted
 ) {
     Column (
         modifier = Modifier.fillMaxSize()
     ) {
+        HeaderSection(
+            modifier = Modifier
+                .padding(top = 40.dp, start = 10.dp, end = 10.dp),
+            username = state.userName,
+            questionAttempted = state.questionAttempted,
+            correctAnswers = state.questionAttempted,
+            onEditNameClick = {}
+        )
+    }
+}
+
+@Composable
+private fun HeaderSection(
+    modifier: Modifier = Modifier,
+    username: String,
+    questionAttempted: Int,
+    correctAnswers: Int,
+    onEditNameClick: () -> Unit
+) {
+    Column(modifier = modifier) {
         Text(
             text = "Hello",
             style = MaterialTheme.typography.bodyMedium
         )
         Row {
             Text(
-                text = state.userName,
+                text = username,
                 style = MaterialTheme.typography.headlineMedium
             )
             IconButton(
                 modifier = Modifier.offset(x = (-10).dp, y = (-20).dp),
-                onClick = {}
+                onClick = onEditNameClick
             ) {
                 Icon(
                     modifier = Modifier.size(15.dp),
@@ -46,18 +67,20 @@ fun DashboardScreen(
             }
         }
         UserStatisticsCard(
-            questionsAttempted = state.questionAttempts,
-            correctAnswers = state.correctAnswers
+            questionsAttempted = questionAttempted,
+            correctAnswers = correctAnswers
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun PreviewDashboardScreen(
-    modifier: Modifier = Modifier
-) {
+private fun PreviewDashboardScreen() {
+    val state = DashboardState(
+        questionAttempted = 10,
+        correctAnswers = 7
+    )
     DashboardScreen(
-        state = DashboardStates()
+        state = state
     )
 }

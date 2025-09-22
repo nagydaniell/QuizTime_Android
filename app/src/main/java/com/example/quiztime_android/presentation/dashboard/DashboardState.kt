@@ -1,7 +1,7 @@
 package com.example.quiztime_android.presentation.dashboard
 
-data class DashboardStates(
+data class DashboardState(
     val userName: String = "Android Developer",
-    val questionAttempts: Int = 0,
-    val correctAnswers: Int = 0
+    val questionAttempted: Int = 0,
+    val correctAnswers: Int = 0,
 )
