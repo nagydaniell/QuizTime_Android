@@ -1,6 +1,6 @@
 package com.example.quiztime_android.domain.model
 
-data class QuizQuestions(
+data class QuizQuestion(
     val id: String,
     val topicCode: Int,
     val question: String,
